@@ -1,56 +1,29 @@
 +++
-title = "Academic Paper Zola Theme"
+title = "Stochastic Poisson Surface Reconstruction with One Solve using Geometric Gaussian Processes"
 [extra]
 authors = [
+    {name = "Sidhanth Holalkere", url = "https://sholalkere.github.io"},
+    {name = "David Bindel", url = "https://www.cs.cornell.edu/~bindel/"},
+    {name = "Silvia Sellán", url = "https://www.silviasellan.com/"},
     {name = "Alexander Terenin", url = "https://avt.im/"},
 ]
-venue = {name = "GitHub", url = "https://github.com/aterenin/academic-paper"}
+venue = {name = "Under Review"}
 buttons = [
-    {name = "Paper", url = "https://aterenin.github.io/academic-paper"},
-    {name = "PDF", url = "https://aterenin.github.io/academic-paper"},
-    {name = "Code", url = "https://github.com/aterenin/academic-paper"},
-    {name = "Poster", url = "https://aterenin.github.io/academic-paper"},
-    {name = "Video", url = "https://aterenin.github.io/academic-paper"},
+    {name = "Arxiv", url = "https://arxiv.org/abs/2503.19136"},
+    {name = "PDF", url = "https://arxiv.org/pdf/2503.19136"},
+    {name = "Code", url = "https://github.com/sholalkere/GeoSPSR"},
 ]
 katex = true
 large_card = false
 favicon = false
 +++
 
-Welcome to the [Academic Paper](https://github.com/aterenin/academic-paper) Zola theme!
-This theme is designed for hosting a blog-post-style website to facilitate scientific communication of your academic paper.
+![Teaser figure which includes a comparison of our method and SPSR on a Dragon mesh](https://github.com/sholalkere/GeoSPSR/raw/master/assets/teaser.png)
 
-# Features
+# Abstract
 
-[Academic Paper](https://github.com/aterenin/academic-paper) is designed to be reasonably feature-complete. In particular, it supports:
-
-* A header with title, author, publication venue, year, and optional buttons for the paper, PDF download link, code, poster, and video.
-* Syntax highlighting via Zola, with a minimal CSS-based color theme.
-* Math rendering via KaTeX, compatible with both client-side and server-side rendering when configured appropriately.
-* Figures via a `figure(alt='Image alt text',src='path/to/image.png')` Zola shortcode, with support for optional captions, subfigures with optional subcaptions, implemented in responsive manner via flexbox.
-* Markdown footnotes via Zola.
-* Twitter Summary Card, OpenGraph, and JSON-LD metadata, to ensure the web pages produced are search-engine-friendly, and provide social media websites with a banner image link they can display when the website is shared on social media, with an implementation very similar to [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag).
-
-Let's demonstrate some of these: writing
-```tex
-$$
-\int_{\mathbb{R}} \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(\frac{(x-\mu)^2}{-2\sigma^2}\right) \mathrm{d} x = 1.
-$$
-```
-in the Markdown file produces the output
-```
-$$
-\int_{\mathbb{R}} \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(\frac{(x-\mu)^2}{-2\sigma^2}\right) \mathrm{d} x = 1.
-$$
-```
-This theme also supports footnotes, and will style the heading that immediately precedes them.[^author]
-
-# Design and maintainability
-
-[Academic Paper](https://github.com/aterenin/academic-paper) is [designed to last](https://jeffhuang.com/designed_to_last/), meaning that it follows a number of best practices to ensure the websites it produces continue to work correctly in the indefinite future with minimal to no maintenance.
-In particular, this theme uses no JavaScript or CSS dependencies, except optionally KaTeX for math.
-Zola, with its Rust-based code, focus on simplicity, and one-binary design, is the clear static site generator of choice for such a theme.
+Poisson Surface Reconstruction is a widely-used algorithm for reconstructing a surface from an oriented point cloud. To facilitate applications where only partial surface information is available, or scanning is performed sequentially, a recent line of work proposes to incorporate uncertainty into the reconstructed surface via Gaussian process models. The resulting algorithms first perform Gaussian process interpolation, then solve a set of volumetric partial differential equations globally in space, resulting in a computationally expensive two-stage procedure. In this work, we apply recently-developed techniques from geometric Gaussian processes to combine interpolation and surface reconstruction into a single stage, requiring only one linear solve per sample. The resulting reconstructed surface samples can be queried locally in space, without the use of problem-dependent volumetric meshes or grids. These capabilities enable one to (a) perform probabilistic collision detection locally around the region of interest, (b) perform ray casting without evaluating points not on the ray's trajectory, and (c) perform next-view planning on a per-slice basis. They also improve reconstruction quality, by not requiring one to approximate kernel matrix inverses with diagonal matrices as part of intermediate computations. Results show that our approach provides a cleaner, more-principled, and more-flexible stochastic surface reconstruction pipeline.
 
 # References
 
-[^author]: This theme is designed and built by Alexander Terenin.
+[^author]: This theme is designed and built by [Alexander Terenin](https://avt.im/).
