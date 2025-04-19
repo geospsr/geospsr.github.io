@@ -18,7 +18,7 @@ large_card = false
 favicon = false
 +++
 
-![Teaser figure which includes a comparison of our method and SPSR on a Dragon mesh](https://github.com/sholalkere/GeoSPSR/raw/master/assets/teaser.png)
+{{ figure(src=["teaser.png"], alt=["Comparison of our method and SPSR on a Dragon mesh."], body="Our method computes posteriors faster and more accurately than previous ones, especially at smaller length scales.") }}
 
 # Abstract
 
