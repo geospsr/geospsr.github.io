@@ -7,7 +7,7 @@ authors = [
     {name = "Silvia Sellán", url = "https://www.silviasellan.com/"},
     {name = "Alexander Terenin", url = "https://avt.im/"},
 ]
-venue = {name = "Under Review"}
+venue = {name = "ICML 2025", url="https://icml.cc/"}
 buttons = [
     {name = "Arxiv", url = "https://arxiv.org/abs/2503.19136"},
     {name = "PDF", url = "https://arxiv.org/pdf/2503.19136"},
